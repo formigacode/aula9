@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 9</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <style>
+  
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .pulsar {
+            animation: pulse 0.05s linear;
+        }
+
+
+        #contador {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+        .botao {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+   
+    <br>
+    <br>
+    <br>
+
+    <h1 onclick="alert('easter egg maluco')">Chimas Clicker</h1>
+
+    <div id="contador">0</div>
+
+    <img id="t2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/C%C3%BAia_de_chimarr%C3%A3o.svg/1200px-C%C3%BAia_de_chimarr%C3%A3o.svg.png" alt="" width="150" class="botao">
+
+    <script>
+
+        var contador = 0;
+        var titulo = document.getElementById("t2");
+        var contadorElement = document.getElementById("contador");
+        var animacaoativa = false;
+
+        titulo.addEventListener("click", function(){
+            if(animacaoativa) {
+                animacaoativa = true
+            }
+            contador++;
+            console.log(contador);
+            contadorElement.innerText = contador; 
+
+            titulo.classList.add("pulsar");
+
+            setTimeout(function(){
+                titulo.classList.remove("pulsar");
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
